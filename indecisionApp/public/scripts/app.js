@@ -6,7 +6,8 @@ console.log('app.js is running');
 
 var app = {
     title: 'How the Pups Fart',
-    subtitle: 'A Tootorial'
+    subtitle: 'A Tootorial',
+    options: ['One']
 };
 
 var template = React.createElement(
@@ -17,49 +18,45 @@ var template = React.createElement(
         null,
         app.title
     ),
-    React.createElement(
+    app.subtitle && React.createElement(
         'p',
         null,
         app.subtitle
-    )
-);
-
-var user = {
-    name: 'Luna',
-    age: 6,
-    location: 'Providence'
-};
-
-function getLocation(location) {
-    if (location) {
-        return React.createElement(
-            'p',
-            null,
-            'Location: ',
-            location
-        );
-    }
-}
-var userName = 'Katie Nichols';
-var userAge = 35;
-var userLocation = 'Providence';
-
-var templateTwo = React.createElement(
-    'div',
-    null,
-    React.createElement(
-        'h1',
-        null,
-        user.name
     ),
     React.createElement(
         'p',
         null,
-        'Age: ',
-        user.age
-    ),
-    getLocation(user.location)
+        app.options.length > 0 ? 'Here are your options: ' + app.options : 'No options'
+    )
 );
 
+// let userName = 'Katie Nichols'
+// let userAge = 35
+// let userLocation = 'Providence'
+
+// const user = {
+//     name: 'Luna',
+//     age: 26,
+//     location: 'Providence'
+// }
+
+// function getLocation(location){
+//     if(location){
+//         return <p>Location: {location}</p>
+//     }
+// }
+
+//h1 with ternary operator
+// ? means true? then it returns : means else return
+//logical and for the age
+// const templateTwo = (
+//     <div>
+//         <h1>{user.name ? user.name: 'Anonymous'}</h1>
+//         {(user.age && user.age >= 18) && <p>Age: {user.age}</p>}
+//         {getLocation(user.location)}
+
+//     </div>
+// )
+
 var appRoute = document.getElementById('apper');
-ReactDOM.render(templateTwo, appRoute);
+ReactDOM.render(template, appRoute);

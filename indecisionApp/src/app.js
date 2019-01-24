@@ -2,42 +2,47 @@ console.log('app.js is running')
 
 // JSX - JavaScript XML
 
-let app = {
+const app = {
     title: 'How the Pups Fart',
-    subtitle: 'A Tootorial'
+    subtitle: 'A Tootorial',
+    options: ['One']
 }
 
-let template = (
+const template = (
     <div>
         <h1>{app.title}</h1>
-        <p>{app.subtitle}</p>
-        
+        {app.subtitle && <p>{app.subtitle}</p>}
+        <p>{app.options.length > 0 ? 'Here are your options: '+ app.options : 'No options'}</p>
     </div>
 )
 
-let user = {
-    name: 'Luna',
-    age: 6,
-    location: 'Providence'
-}
+// let userName = 'Katie Nichols'
+// let userAge = 35
+// let userLocation = 'Providence'
 
-function getLocation(location){
-    if(location){
-        return <p>Location: {location}</p>
-    }
-}
-let userName = 'Katie Nichols'
-let userAge = 35
-let userLocation = 'Providence'
+// const user = {
+//     name: 'Luna',
+//     age: 26,
+//     location: 'Providence'
+// }
 
-let templateTwo = (
-    <div>
-        <h1>{user.name}</h1>
-        <p>Age: {user.age}</p>
-        {getLocation(user.location)}
+// function getLocation(location){
+//     if(location){
+//         return <p>Location: {location}</p>
+//     }
+// }
+
+//h1 with ternary operator
+// ? means true? then it returns : means else return
+//logical and for the age
+// const templateTwo = (
+//     <div>
+//         <h1>{user.name ? user.name: 'Anonymous'}</h1>
+//         {(user.age && user.age >= 18) && <p>Age: {user.age}</p>}
+//         {getLocation(user.location)}
         
-    </div>
-)
+//     </div>
+// )
 
-let appRoute = document.getElementById('apper')
-ReactDOM.render(templateTwo, appRoute)
+const appRoute = document.getElementById('apper')
+ReactDOM.render(template, appRoute) 
