@@ -15,6 +15,7 @@ const template = (
         <p>{app.options.length > 0 ? 'Here are your options: '+ app.options : 'No options'}</p>
     </div>
 )
+const appRoute = document.getElementById('apper')
 
 // let userName = 'Katie Nichols'
 // let userAge = 35
@@ -43,37 +44,3 @@ const template = (
 
 //     </div>
 // )
-
-let count = 0
-const addOne = () => {
-    count ++
-    // console.log('addOne', count)
-    renderCounterApp()
-}
-
-const minusOne = () => {
-    // console.log('minusOne')
-    count --
-    renderCounterApp()
-}
-
-const reset = () =>{
-    // console.log('reset')
-    count = 0
-    renderCounterApp()
-}
-
-const appRoute = document.getElementById('apper')
-
-const renderCounterApp = () => {
-    const templateTwo = (
-        <div>
-            <h1>Count: {count}</h1>
-            <button onClick={addOne}>+1</button>
-            <button onClick={minusOne}>-1</button>
-            <button onClick={reset}>Reset</button>
-        </div>
-    )
-    ReactDOM.render(templateTwo, appRoute)
-}
-renderCounterApp()
