@@ -5,17 +5,26 @@ console.log('app.js is running')
 const app = {
     title: 'How the Pups Fart',
     subtitle: 'A Tootorial',
-    options: ['One']
+    options: ['One', 'Two']
 }
 
 const template = (
     <div>
         <h1>{app.title}</h1>
         {app.subtitle && <p>{app.subtitle}</p>}
-        <p>{app.options.length > 0 ? 'Here are your options: '+ app.options : 'No options'}</p>
+        <p>{app.options.length > 0 ? 'Here are your options' : 'No options'}</p>
+        <ol>
+            <li>Item One</li>
+            <li>Item Two</li>
+        </ol>
+        <form>
+            <input type="text" name="option"/>
+            <button>Add Option</button>
+        </form>
     </div>
 )
 const appRoute = document.getElementById('apper')
+ReactDOM.render(template, appRoute)
 
 // let userName = 'Katie Nichols'
 // let userAge = 35
