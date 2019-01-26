@@ -40,31 +40,40 @@ const template = (
 //         <h1>{user.name ? user.name: 'Anonymous'}</h1>
 //         {(user.age && user.age >= 18) && <p>Age: {user.age}</p>}
 //         {getLocation(user.location)}
-        
+
 //     </div>
 // )
 
 let count = 0
 const addOne = () => {
     count ++
-    console.log('addOne', count)
+    // console.log('addOne', count)
+    renderCounterApp()
 }
 
 const minusOne = () => {
-    console.log('minusOne')
+    // console.log('minusOne')
+    count --
+    renderCounterApp()
 }
 
 const reset = () =>{
-    console.log('reset')
+    // console.log('reset')
+    count = 0
+    renderCounterApp()
 }
-const templateTwo = (
-    <div>
-        <h1>Count: {count}</h1>
-        <button onClick={addOne}>+1</button>
-        <button onClick={minusOne}>-1</button>
-        <button onClick={reset}>Reset</button>
-    </div>
-)
 
 const appRoute = document.getElementById('apper')
-ReactDOM.render(templateTwo, appRoute) 
+
+const renderCounterApp = () => {
+    const templateTwo = (
+        <div>
+            <h1>Count: {count}</h1>
+            <button onClick={addOne}>+1</button>
+            <button onClick={minusOne}>-1</button>
+            <button onClick={reset}>Reset</button>
+        </div>
+    )
+    ReactDOM.render(templateTwo, appRoute)
+}
+renderCounterApp()
